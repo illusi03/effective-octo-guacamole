@@ -9,7 +9,7 @@ class VerificationController extends Controller {
 
   use VerifiesEmails;
 
-  protected $redirectTo = 'home';
+  protected $redirectTo = '/';
 
   public function __construct() {
     $this->middleware('auth');

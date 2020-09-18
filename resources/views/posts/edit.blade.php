@@ -50,7 +50,11 @@
                     </span>
                   @enderror
                 </div>
-                <img class="mt-3" id="preview_img" src="https://www.w3adda.com/wp-content/uploads/2019/09/No_Image-128.png" class="" width="100" height="100" />
+                @if(!empty($post->url_image))
+                  <img class="mt-3" id="preview_img" src="{{ asset("/images/".$post->url_image) }}" class="" width="100" height="100" />
+                @else
+                  <img class="mt-3" id="preview_img" src="https://www.w3adda.com/wp-content/uploads/2019/09/No_Image-128.png" class="" width="100" height="100" />
+                @endif
               </div>
             </div>
             <div class="form-group row mb-0">

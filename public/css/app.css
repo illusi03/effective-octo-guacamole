@@ -10927,6 +10927,14 @@ body {
   margin: 0;
 }
 
+.my-style p {
+  margin: 0;
+}
+
+.my-style .posts-card {
+  margin: 0;
+}
+
 .my-style .posts-card p {
   margin: 0;
 }
@@ -10937,7 +10945,7 @@ body {
 
 .my-style .posts-card:not(:last-child) {
   border-bottom: 2px solid var(--black-050);
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   padding-bottom: 5px;
 }
 
@@ -10956,5 +10964,26 @@ body {
 
 .my-style .posts-card .posts-content {
   margin: 0;
+}
+
+.my-style .posts-comment {
+  padding-left: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 15px;
+  transition: all 0.2s;
+}
+
+.my-style .posts-comment:hover {
+  background-color: var(--black-025);
+}
+
+.my-style .posts-comment strong {
+  font-weight: 800;
+}
+
+.my-style .text-title-comment {
+  margin-top: -10px;
+  font-size: 16px;
+  color: var(--black-900);
 }
 

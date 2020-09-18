@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\ConfirmsPasswords;
 
 class ConfirmPasswordController extends Controller {
   use ConfirmsPasswords;
-  protected $redirectTo = 'home';
+  protected $redirectTo = '/';
   public function __construct() {
     $this->middleware('auth');
   }

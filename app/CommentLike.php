@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CommentLike extends Model
-{
-    //
+class CommentLike extends Model {
+  protected $guarded = [
+    "id", "created_at", "updated_at",
+  ];
 }

@@ -21,7 +21,7 @@ class CreateCommentLikesTable extends Migration {
       $table->foreign('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');
       $table->foreign('comment_id')->nullable()->references('id')->on('comments')->onDelete('cascade');
 
-      $table->index(['user_id', 'comment_id'], 'comment_likes_unique');
+      $table->unique(['user_id', 'comment_id']);
     });
   }
 

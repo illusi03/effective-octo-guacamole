@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\PostLike;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -19,4 +20,16 @@ class User extends Authenticatable {
   protected $casts = [
     'email_verified_at' => 'datetime',
   ];
+  function posts() {
+    return $this->hasMany(Post::class);
+  }
+  function comments() {
+    return $this->hasMany(Comment::class);
+  }
+  function likeComments() {
+    return $this->hasMany(CommentLike::class);
+  }
+  function likePosts() {
+    return $this->hasMany(PostLike::class);
+  }
 }

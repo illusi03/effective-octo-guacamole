@@ -21,7 +21,7 @@ class CreatePostLikesTable extends Migration {
       $table->foreign('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');
       $table->foreign('post_id')->nullable()->references('id')->on('posts')->onDelete('cascade');
 
-      $table->index(['user_id', 'post_id'], 'post_likes_unique');
+      $table->unique(['user_id', 'post_id']);
     });
   }
 

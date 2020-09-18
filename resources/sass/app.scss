@@ -36,7 +36,13 @@ body {
 }
 
 .my-style {
+  p {
+    margin: 0;
+  }
+
   .posts-card {
+    margin: 0;
+
     p {
       margin: 0;
     }
@@ -47,7 +53,7 @@ body {
 
     &:not(:last-child) {
       border-bottom: 2px solid var(--black-050);
-      margin-bottom: 25px;
+      margin-bottom: 15px;
       padding-bottom: 5px;
     }
 
@@ -66,7 +72,27 @@ body {
 
     .posts-content {
       margin: 0;
-
     }
+  }
+
+  .posts-comment {
+    padding-left: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: var(--black-025);
+    }
+
+    strong {
+      font-weight: 800;
+    }
+  }
+
+  .text-title-comment {
+    margin-top: -10px;
+    font-size: 16px;
+    color: var(--black-900);
   }
 }
