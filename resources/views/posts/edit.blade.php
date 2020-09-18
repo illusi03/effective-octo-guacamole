@@ -5,18 +5,17 @@
   <div class="row justify-content-center">
     <div class="col-md-9">
       <div class="card">
-        <div class="card-header">
-          <span>Create Post</span>
-        </div>
+        <div class="card-header">Update Posts </div>
         <div class="card-body">
-          <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('posts.update', ['post' => $post]) }}" enctype="multipart/form-data">
             @csrf
+            @method("PATCH")
             <div class="form-group row">
               <label for="title" class="col-md-2 col-form-label text-md-right">
                 Title Post
               </label>
               <div class="col-md-10">
-                <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" />
+                <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $post->title ?? "" }}" />
                 @error('title')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -29,7 +28,7 @@
                 Content Post
               </label>
               <div class="col-md-10">
-                <textarea name="content" class="form-control my-editor @error('content') is-invalid @enderror">{!! old('content', $content ?? "") !!}</textarea>
+                <textarea name="content" class="form-control my-editor @error('content') is-invalid @enderror">{!! $post->content ?? "" !!}</textarea>
                 @error('content')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -70,6 +69,3 @@
 @endsection
 
 @include("posts.scripts")
-@push("scripts.footer")
-
-@endpush

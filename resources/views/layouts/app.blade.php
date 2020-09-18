@@ -12,7 +12,7 @@
 
   </div>
   @include('sweetalert::alert')
-  @stack("scripts-footer")
+  @stack("scripts.footer")
 </body>
 
 </html>

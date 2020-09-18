@@ -52,7 +52,6 @@
                 <button type="submit" class="btn btn-primary">
                   Login
                 </button>
-
                 @if(Route::has('password.request'))
                   <a class="btn btn-link" href="{{ route('password.request') }}">
                     Forgot Password
