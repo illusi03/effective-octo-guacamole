@@ -7,7 +7,7 @@
       <div class="card">
         <div class="card-header">
           <div class="row justify-content-between align-items-center px-3">
-            <span>My Profile</span>
+            <span>Profile Detail Information</span>
             <?php $isFollowing = false; ?>
             @if(Auth::user()->id != $user->id)
               @foreach($user->followers as $follower)
@@ -78,29 +78,29 @@
               <td>{{ $user->comments_count ?? "0" }} Comments</td>
             </tr>
             <tr>
-              <td style="width: 250px">My Liked Post Count</td>
+              <td style="width: 250px">Liked Post Count</td>
               <td style="width: 1px">:</td>
               <td>{{ $user->like_posts_count ?? "0" }} Liked</td>
             </tr>
             <tr>
-              <td style="width: 250px">My Liked Comment Count</td>
+              <td style="width: 250px">Liked Comment Count</td>
               <td style="width: 1px">:</td>
               <td>{{ $user->like_comments_count ?? "0" }} Liked</td>
             </tr>
             <tr>
-              <td style="width: 250px">Total Reach My Post Likes</td>
+              <td style="width: 250px">Total Reach Post Likes</td>
               <td style="width: 1px">:</td>
               <td>{{ $totalLikePosts ?? "0" }} Likes</td>
             </tr>
             <tr>
-              <td style="width: 250px">Total Reach My Comment Likes</td>
+              <td style="width: 250px">Total Reach Comment Likes</td>
               <td style="width: 1px">:</td>
               <td>{{ $totalLikeComments ?? "0" }} Likes</td>
             </tr>
             <tr>
               <td style="width: 250px">Created At</td>
               <td style="width: 1px">:</td>
-              <td>{{ \Carbon\Carbon::parse($user->created_at)->format('d/M/Y h:m') }} WIB</td>
+              <td>{{ \Carbon\Carbon::parse($user->created_at)->format('d/M/Y H:m') }} WIB</td>
             </tr>
           </table>
         </div>
