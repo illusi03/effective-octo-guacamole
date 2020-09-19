@@ -7,7 +7,13 @@
       <div class="card">
         <div class="card-header">
           <div class="row justify-content-between align-items-center px-3">
-            <span>My List Posts</span>
+            <span>
+              @if(empty($isAll))
+                My List Posts
+              @else
+                All Posts From All Users
+              @endif
+            </span>
             <a href="{{ route('posts.create') }}" class="btn btn-primary">Add Posts</a>
           </div>
         </div>

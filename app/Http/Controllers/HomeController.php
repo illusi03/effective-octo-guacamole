@@ -21,7 +21,7 @@ class HomeController extends Controller {
       ->withCount('likes', 'comments')
       ->orderBy('id', 'DESC')
       ->get();
-    return view('posts.index', ['posts' => $posts]);
+    return view('posts.index', ['posts' => $posts, 'isAll' => true]);
   }
   public function myProfile($userId) {
     $user = User::where('id', '=', $userId)
@@ -98,6 +98,6 @@ class HomeController extends Controller {
 
     $user->save();
     toast('Success Update Profile User', 'success');
-    return redirect()->back();
+    return redirect()->route('profile', ['user' => $user]);
   }
 }
