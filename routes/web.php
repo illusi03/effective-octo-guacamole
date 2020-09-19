@@ -19,6 +19,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 // My Profile
 Route::get('/profile/{user}', 'HomeController@myProfile')->name('profile');
+Route::post('/profile/follow/{user}', 'HomeController@follow')->name('profile.follow');
 // Posts
 Route::get('/posts', 'PostController@index')->name('posts');
 Route::get('/posts/create', 'PostController@create')->name('posts.create');
