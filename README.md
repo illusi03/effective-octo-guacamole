@@ -4,7 +4,7 @@ This theme Applicaion is Social Media Based, where user can be Post some idea th
 
 ### Demo App Video
 
-[![Download](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/button.png =50x150)](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/Demo_App.mkv?inline=false)
+[![Download](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/button.png=50x150)](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/Demo_App.mkv?inline=false)
 
 ### Demo App Images
 
