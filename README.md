@@ -4,12 +4,12 @@ This theme Applicaion is Social Media Based, where user can be Post some idea th
 
 ### Demo App Video
 
-[![Download](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/button.png=50x150)](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/Demo_App.mkv?inline=false)
+[![Download](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/button.png){ width: 100px; }](https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/Demo_App.mkv?inline=false)
 
 ### Demo App Images
 
 <p float="left">
-  <img src="https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/Demo_App.png" width="100%" height="350" alt=""/>
+  <img src="https://gitlab.com/illusi03/sanber-laravel-final/-/raw/master/Demo_App.png" width="100%" height="400" alt=""/>
 </p>
 
 ### Why This App. ? For User
