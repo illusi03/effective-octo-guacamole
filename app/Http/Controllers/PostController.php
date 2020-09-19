@@ -119,7 +119,7 @@ class PostController extends Controller {
         return redirect()->back();
       }
     }
-    toast('Comment Has Liked !', 'success');
+    toast('Post Has Liked !', 'success');
     return redirect()->back();
   }
 }
