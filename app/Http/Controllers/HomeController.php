@@ -6,8 +6,9 @@ use App\Follow;
 use App\Post;
 use App\User;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller {
 
@@ -60,6 +61,43 @@ class HomeController extends Controller {
       }
     }
     toast('Has Followed !', 'success');
+    return redirect()->back();
+  }
+  public function edit(User $user) {
+    $myUser = Auth::user();
+    $currentUserId = Auth::user()->id;
+    $userIdPost = $user->id;
+    if ($currentUserId != $userIdPost) {
+      toast('Cannot Edit Other User Profile', 'error');
+      return redirect()->route('profile', ['user' => $myUser]);
+    }
+    return view('auth.edit', ['user' => $user]);
+  }
+  public function update(Request $request, User $user) {
+    $request->validate([
+      'name' => ['string', 'max:255'],
+      'password' => ['nullable', 'string', 'min:8', 'confirmed'],
+    ]);
+    $userId = Auth::user()->id;
+    $userIdPost = $user->id;
+    if ($userId != $userIdPost) {
+      toast('This is not your Profile', 'error');
+      return redirect()->back();
+    }
+    $datas = $request->all();
+    $request->password;
+    if ($request->name) {
+      $user['name'] = $request->name;
+    }
+    $oldPassword = $user->password;
+    $user['password'] = $oldPassword;
+    if ($request->password) {
+      $newPassword = Hash::make($request->password);
+      $user['password'] = $newPassword;
+    }
+
+    $user->save();
+    toast('Success Update Profile User', 'success');
     return redirect()->back();
   }
 }

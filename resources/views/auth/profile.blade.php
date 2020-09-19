@@ -25,6 +25,8 @@
                   Already Following
                 </span>
               @endif
+            @else
+              <a href="{{ route('profile.edit', ['user' => $user]) }}" class="btn btn-sm btn-outline-primary">Edit Profile</a>
             @endif
           </div>
         </div>
