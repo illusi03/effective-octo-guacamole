@@ -35,9 +35,10 @@
         Already Liked
       </span>
     @else
-      <a href="{{ route('posts.like', ['post' => $post]) }}" class="mr-1">
-        Like
-      </a>
+      <form method="POST" action="{{ route('posts.like', ['post' => $post]) }}">
+        @csrf
+        <input type="submit" value="Like" class="btn btn-link py-0 px-0 pr-2" />
+      </form>
     @endif
     <span class="mr-3">({{ $post->likes_count ?? "0" }} Likes)</span>
     @if(empty($isShow))

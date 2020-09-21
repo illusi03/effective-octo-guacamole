@@ -35,9 +35,10 @@
                       Already Liked
                     </span>
                   @else
-                    <a href="{{ route('comments.like', ['comment' => $comment]) }}" class="mr-1">
-                      Like
-                    </a>
+                    <form method="POST" action="{{ route('comments.like', ['comment' => $comment]) }}" style="display: inline">
+                      @csrf
+                      <input type="submit" value="Like" class="btn btn-link py-0 px-0 pr-2" />
+                    </form>
                   @endif
                   <span>({{ $comment->likes_count ?? "0" }} Likes)</span>
                   <span class="mx-1"> - </span>

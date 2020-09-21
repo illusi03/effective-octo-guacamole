@@ -31,11 +31,11 @@ Route::patch('/posts/edit/{post}', 'PostController@update')->name('posts.update'
 Route::post('/posts', 'PostController@store')->name('posts.store');
 Route::delete('/posts/delete/{post}', 'PostController@destroy')->name('posts.delete');
 // Like
-Route::get('/posts/like/{post}', 'PostController@like')->name('posts.like');
+Route::post('/posts/like/{post}', 'PostController@like')->name('posts.like');
 // Comment
 Route::post('/comments/{post}', 'CommentController@store')->name('comments.store');
 Route::delete('/comments/delete/{comment}', 'CommentController@destroy')->name('comments.delete');
-Route::get('/comments/like/{comment}', 'CommentController@like')->name('comments.like');
+Route::post('/comments/like/{comment}', 'CommentController@like')->name('comments.like');
 
 // File Manager Test (WYSIWYG)
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
